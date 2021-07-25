@@ -1,7 +1,9 @@
 import sys
 
 def tokenize_input(text): # O(n)
-    clean_input = text.replace('\n', ' ') # O(n) - Boyer-Moore
+    punctuations = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+    no_punctuations = text.replace(punctuations, '')
+    clean_input = no_punctuations.replace('\n', ' ') # O(n) - Boyer-Moore
     return clean_input.split(' ') # O(n)
 
 def sort_dictionary(frequency, descending=True): # O(n)
